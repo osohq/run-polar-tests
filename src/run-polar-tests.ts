@@ -5,9 +5,9 @@ import * as fs from 'fs'
 import { glob } from 'glob'
 
 /**
- * @returns {Promise<boolean>} true if validation succeeds, false otherwise
+ * @returns {Promise<void>}
  */
-export async function runPolarTests(): Promise<boolean> {
+export async function runPolarTests(): Promise<void> {
   let output = ''
   let error = ''
 
@@ -32,6 +32,4 @@ export async function runPolarTests(): Promise<boolean> {
 
   core.debug(`stdout from polar tests: \n${output}`)
   core.debug(`stderr from polar tests: \n${error}`)
-
-  return true
 }

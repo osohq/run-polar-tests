@@ -4271,12 +4271,8 @@ const run_polar_tests_1 = __nccwpck_require__(6927);
  */
 async function run() {
     try {
-        // Log the current timestamp, wait, then log the new timestamp
-        core.debug(new Date().toTimeString());
+        // Run the polar tests. If they fail, the action will return a failure.
         await (0, run_polar_tests_1.runPolarTests)();
-        core.debug(new Date().toTimeString());
-        // Set outputs for other workflow steps to use
-        core.setOutput('time', new Date().toTimeString());
     }
     catch (error) {
         // Fail the workflow run if an error occurs
@@ -4324,7 +4320,7 @@ const exec = __importStar(__nccwpck_require__(1514));
 const fs = __importStar(__nccwpck_require__(7147));
 const glob_1 = __nccwpck_require__(8211);
 /**
- * @returns {Promise<boolean>} true if validation succeeds, false otherwise
+ * @returns {Promise<void>}
  */
 async function runPolarTests() {
     let output = '';
@@ -4345,7 +4341,6 @@ async function runPolarTests() {
     await exec.exec('oso-cloud', ['test'].concat(polarFilesNoSymlinks), options);
     core.debug(`stdout from polar tests: \n${output}`);
     core.debug(`stderr from polar tests: \n${error}`);
-    return true;
 }
 exports.runPolarTests = runPolarTests;
 
