@@ -1,5 +1,7 @@
 # Run Oso Cloud Polar tests
 
+## Summary
+
 GitHub Action that uses the [Oso Cloud](https://www.osohq.com/)
 [CLI](https://www.osohq.com/docs/reference/client-apis/cli)
 to run all [polar](https://www.osohq.com/docs/tutorials/quickstart)
@@ -19,18 +21,25 @@ For a detailed overview of Polar tests, please see the Oso Cloud
 The Oso Cloud CLI should be installed on the runner before using this action.
 Use the setup-oso-cloud action to do this.
 
-- __Environment Variables:__
-    - __OSO_AUTH__
-        - API Key for the Oso Cloud environment to use when running tests.
-        - NOTE: The key should be stored in a GitHub secret.
-        - NOTE: This can be a read-only key
-        - NOTE: The policy in this environment will not be overwritten.
-        - example:
-        ```
-        env:
-          OSO_AUTH: ${{ secrets.YOUR_OSO_CLOUD_API_KEY_SECRET_NAME }}
-        ```
-- __Inputs:__ none
-- __Outputs:__ none
+## Environment Variables:
+
+__OSO_AUTH__:  API Key for the Oso Cloud environment to use for tests. 
+Can be aread-only key. 
+The environment's policy code will not be overwritten.
+
+```
+
+env:
+  OSO_AUTH: ${{ secrets.YOUR_OSO_CLOUD_API_KEY_SECRET_NAME }}
+
+```
+
+## Inputs:
+
+none
+
+## Outputs:
+
+none
 
 Succeeds if the `oso-cloud test` command succeeds, fails otherwise.
