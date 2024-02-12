@@ -21,24 +21,24 @@ For a detailed overview of Polar tests, please see the Oso Cloud
 The Oso Cloud CLI should be installed on the runner before using this action.
 Use the setup-oso-cloud action to do this.
 
-## Environment Variables:
+## Environment Variables
 
-__OSO_AUTH__:  API Key for the Oso Cloud environment to use for tests. 
-Can be aread-only key. 
+__OSO_AUTH__:  API Key for the Oso Cloud environment to use for tests.
+Can be aread-only key.
 The environment's policy code will not be overwritten.
 
-```
+```bash
 
 env:
   OSO_AUTH: ${{ secrets.YOUR_OSO_CLOUD_API_KEY_SECRET_NAME }}
 
 ```
 
-## Inputs:
+## Inputs
 
 none
 
-## Outputs:
+## Outputs
 
 none
 
