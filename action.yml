@@ -1,18 +1,16 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Run Polar Tests'
+description: 'Runs tests in all .polar files in the current repo'
+author: 'Oso'
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: 'heart'
-  color: 'red'
+  icon: 'user-check'
+  color: 'purple'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
-    required: true
-    default: '1000'
+  oso-cloud-api-key:
+    description: API key to the Oso Cloud environment against which you wish to run the polar tests.
 
 # Define your outputs here.
 outputs:
